@@ -8,6 +8,7 @@ public class PocSpringBatchApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PocSpringBatchApplication.class, args);
+		System.out.println("::::::::::::::::::: Projeto Inicializado com Sucesso :::::::::::::::::::");
 	}
 
 }

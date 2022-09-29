@@ -8,12 +8,18 @@ import org.quartz.TriggerBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.mrc.batch.util.Util;
+
 @Configuration
 public class TriggerConfig {
 	@Bean
 	public Trigger primeiroHorario() {
-		System.out.println("PRIMEIRO HORARIO EXECUTADO");
-		CronScheduleBuilder schedule = CronScheduleBuilder.cronSchedule("00 58 11 1/1 * ? *");
+		String min = Util.getMin().toString();
+		String hour = Util.getHour().toString();
+		System.out.println("PRIMEIRO HORARIO EXECUTADO " + hour + ":" + min);
+
+		CronScheduleBuilder schedule = CronScheduleBuilder
+				.cronSchedule("00 30 12 1/1 * ? *".replace("30", min).replace("12", hour));
 		return TriggerBuilder.newTrigger().forJob(jobDetail()).withSchedule(schedule).build();
 	}
 
