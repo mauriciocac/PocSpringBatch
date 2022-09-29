@@ -21,7 +21,7 @@ public class StepConfig {
 
 			@Override
 			public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
-				System.out.println("STEP CONFIGURADO");
+				System.out.println("STEP EXECUTADO");
 				return RepeatStatus.FINISHED;
 			}
 		}).build();
